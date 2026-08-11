@@ -121,7 +121,7 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .btn:hover { transform: translateY(-3px); }
+    .btn:hover { transform: translateY(-3px) scale(1.03); }
 
     .btn-primary {
       background: linear-gradient(135deg, var(--accent), var(--accent-neon));
@@ -182,12 +182,30 @@
       border-radius: 1.2rem;
       box-shadow: 0 0 18px #00000060;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+      overflow: hidden;
     }
 
     .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 0 28px #00000090;
     }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 2px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-neon));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+    }
+
+    .card:hover::before { opacity: 1; }
 
     .grid-2 {
       display: grid;
@@ -264,7 +282,11 @@
 
         <div class="hero-actions">
           <a class="btn btn-primary" href="#proyectos">Ver proyectos</a>
-          <a class="btn btn-outline" href="#">Descargar CV</a>
+
+          <!-- BOTÓN CV FUNCIONANDO -->
+          <a class="btn btn-outline" href="MNO - 2024.docx.pdf" download>
+            Descargar CV
+          </a>
         </div>
 
         <div class="hero-meta">
@@ -451,4 +473,9 @@
     </section>
 
     <footer>
-      © 2026 · Marga Nicolau ·
+      © 2026 · Marga Nicolau · Portfolio profesional
+    </footer>
+
+  </div>
+</body>
+</html>
