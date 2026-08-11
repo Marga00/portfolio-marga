@@ -14,6 +14,7 @@
       --accent-neon: #00f5d4;
       --text: #f5f5f5;
       --muted: #9ca3af;
+      --card-bg: #11131a;
     }
 
     * {
@@ -284,9 +285,15 @@
 
     .card {
       border-radius: 1.1rem;
-      background: var(--bg-alt);
+      background: var(--card-bg);
       border: 1px solid #1f2937;
       padding: 1.4rem 1.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 18px #00000080;
     }
 
     .card h3 {
@@ -475,13 +482,12 @@
         </p>
 
         <div class="hero-actions">
-          <button class="btn btn-primary">Ver proyectos</button>
-          <button class="btn btn-outline">Descargar CV</button>
+          <a class="btn btn-primary" href="#proyectos">Ver proyectos</a>
+          <a class="btn btn-outline" href="#">Descargar CV</a>
         </div>
 
         <div class="hero-meta">
           <span>📍 Campos (Mallorca)</span>
-          <span>💻 Angular · Vue · JavaScript · TypeScript</span>
           <span>🎸 Proactiva</span>
         </div>
       </div>
@@ -497,7 +503,6 @@
           </p>
           <div class="hero-aside-tags">
             <span class="tag">Angular 17</span>
-            <span class="tag">Firebase</span>
             <span class="tag">PWA</span>
             <span class="tag">Chart.js</span>
           </div>
@@ -513,10 +518,10 @@
       <div class="grid-2">
         <div>
           <p>
-            Soy desarrolladora web especializada en front-end con Angular y Vue. Combino experiencia técnica con análisis funcional, diseño y docencia. Me gusta crear interfaces claras, modernas y bien estructuradas, siempre con un enfoque práctico y orientado al usuario.
+            Soy desarrolladora web especializada en front‑end con Angular y Vue, con conocimientos de back‑end que me permiten entender y trabajar el ciclo completo de una aplicación. Me gusta crear interfaces modernas, claras y funcionales, siempre con un enfoque práctico y orientado al usuario.
           </p>
           <p style="margin-top:0.8rem;">
-            He trabajado en proyectos corporativos de gran escala y también en desarrollos propios como Macoapp, lo que me permite tener una visión completa del ciclo de desarrollo: desde la idea hasta el despliegue.
+            He trabajado en entornos corporativos y en proyectos propios como Macoapp, lo que me aporta una visión completa del desarrollo: desde la definición funcional hasta el despliegue final.
           </p>
         </div>
 
@@ -565,15 +570,4 @@
         </div>
 
         <div class="timeline-item">
-          <h3>Docente en Informática · CEPA Sud Escola d’adults</h3>
-          <span>2019 – 2025</span>
-          <p>
-            Formación en informática básica y avanzada, ofimática, TIC y planificación educativa para adultos.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <h3>Programadora Informática · Air Europa (Desoftjim, S.L.)</h3>
-          <span>2018 – 2019</span>
-          <p>
-            Desarrollo de aplicaciones web con Java, Spring Boot, MVC
+          <h3>Docente en Informática · CEPA Sud Escola d
