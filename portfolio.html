@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio · Marga Nicolau</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #05060a;
+      --bg-alt: #0b0d14;
+      --accent: #ff2e63;
+      --accent-soft: #ff2e6340;
+      --accent-neon: #00f5d4;
+      --text: #f5f5f5;
+      --muted: #9ca3af;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #141824 0, #05060a 55%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent-neon);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    /* Rocker header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .logo-mark {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: conic-gradient(from 180deg, var(--accent) 0, var(--accent-neon) 40%, #ffffff 60%, var(--accent) 100%);
+      box-shadow: 0 0 18px var(--accent-soft);
+      position: relative;
+    }
+
+    .logo-icon::after {
+      content: "M";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Space Grotesk", monospace;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #05060a;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text span:first-child {
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    .logo-text span:last-child {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-neon));
+      transition: width 0.2s ease-out;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
+      gap: 2.5rem;
+      align-items: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .hero-main h1 {
+      font-family: "Space Grotesk", monospace;
+      font-size: clamp(2.4rem, 4vw, 3.2rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-main h1 span {
+      color: var(--accent);
+    }
+
+    .hero-role {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-tagline {
+      font-size: 0.98rem;
+      max-width: 32rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-tagline strong {
+      color: var(--accent-neon);
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.6rem 1.4rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-neon));
+      color: #05060a;
+      box-shadow: 0 0 18px var(--accent-soft);
+    }
+
+    .btn-outline {
+      border-color: var(--accent-soft);
+      color: var(--text);
+      background: #05060a;
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-meta span {
+      display: inline-block;
+      margin-right: 0.75rem;
+    }
+
+    .hero-aside {
+      position: relative;
+      padding: 1.5rem;
+      border-radius: 1.5rem;
+      background: radial-gradient(circle at top left, #1b1f30 0, #05060a 55%);
+      border: 1px solid #1f2937;
+      box-shadow: 0 0 24px #00000080;
+      overflow: hidden;
+    }
+
+    .hero-aside::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 10% 0, var(--accent-soft) 0, transparent 55%),
+        radial-gradient(circle at 90% 100%, #00f5d440 0, transparent 55%);
+      opacity: 0.7;
+      mix-blend-mode: screen;
+    }
+
+    .hero-aside-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-aside-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-aside-highlight {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-aside-highlight span {
+      color: var(--accent-neon);
+    }
+
+    .hero-aside-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-aside-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+    }
+
+    .tag {
+      border-radius: 999px;
+      padding: 0.25rem 0.7rem;
+      border: 1px solid #374151;
+      background: #05060a80;
+    }
+
+    .tag-accent {
+      border-color: var(--accent-soft);
+      color: var(--accent-neon);
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-heading {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Grid blocks */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr);
+      gap: 2rem;
+    }
+
+    .card {
+      border-radius: 1.1rem;
+      background: var(--bg-alt);
+      border: 1px solid #1f2937;
+      padding: 1.4rem 1.5rem;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card small {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      margin-top: 0.6rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.8rem;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid #374151;
+      color: var(--muted);
+    }
+
+    .pill-strong {
+      border-color: var(--accent-soft);
+      color: var(--accent-neon);
+    }
+
+    /* Experience list */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .timeline-item {
+      padding-left: 1.2rem;
+      border-left: 2px solid #1f2937;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 0.35rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent-soft);
+    }
+
+    .timeline-item h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .timeline-item span {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .timeline-item p {
+      font-size: 0.85rem;
+      margin-top: 0.4rem;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .skills-grid h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+    }
+
+    .skills-list span {
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid #374151;
+      color: var(--muted);
+    }
+
+    .skills-list span.highlight {
+      border-color: var(--accent-soft);
+      color: var(--accent-neon);
+    }
+
+    /* Contact */
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .contact-main {
+      font-size: 0.95rem;
+    }
+
+    .contact-main p {
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 840px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        flex-wrap: wrap;
+      }
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo-mark">
+        <div class="logo-icon"></div>
+        <div class="logo-text">
+          <span>MARGA NICOLAU</span>
+          <span>Front-end · Angular · Firebase</span>
+        </div>
+      </div>
+      <nav>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#skills">Skills</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-main">
+        <h1><span>Marga</span> Nicolau Oliver</h1>
+        <div class="hero-role">Front-end developer · Angular · Firebase · Vue</div>
+        <p class="hero-tagline">
+          Desarrollo aplicaciones web claras, modernas y con un toque <strong>rocker</strong>: código limpio, buen rendimiento y
+          experiencia de usuario cuidada, tanto en entornos corporativos como en proyectos propios.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary">Ver proyectos</button>
+          <button class="btn btn-outline">Descargar CV</button>
+        </div>
+        <div class="hero-meta">
+          <span>📍 Campos (Mallorca)</span>
+          <span>💻 Angular · Firebase · Java · Vue</span>
+          <span>🎸 Proactiva · En constante formación</span>
+        </div>
+      </div>
+      <aside class="hero-aside">
+        <div class="hero-aside-inner">
+          <div class="hero-aside-title">Proyecto destacado</div>
+          <div class="hero-aside-highlight">
+            MACO <span>App</span> · Gestión de entrenadores y clientes
+          </div>
+          <p class="hero-aside-note">
+            Plataforma web en Angular 17 y Firebase, pensada para móviles (PWA) y orientada a la operativa diaria de entrenadores
+            personales y sus clientes.
+          </p>
+          <div class="hero-aside-tags">
+            <span class="tag tag-accent">Angular 17</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">PWA</span>
+            <span class="tag">Chart.js</span>
+            <span class="tag">Entrenadores · Clientes</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="sobre-mi">
+      <div class="section-title">Sobre mí</div>
+      <div class="section-heading">Perfil profesional</div>
+      <div class="grid-2">
+        <div>
+          <p>
+            Soy desarrolladora web con experiencia en <strong>front-end</strong>, <strong>análisis funcional</strong>, diseño y
+            docencia. He trabajado en entornos corporativos como Air Europa, en proyectos de desarrollo Java y Python, y en
+            plataformas propias como <strong>Macoapp</strong>.
+          </p>
+          <p style="margin-top:0.8rem;">
+            Me gusta combinar una base técnica sólida (Angular, TypeScript, Firebase, Java, Spring Boot, Vue) con una visión
+            funcional clara: entender el negocio, documentar bien y entregar soluciones que realmente se usan.
+          </p>
+          <p style="margin-top:0.8rem;">
+            Mantengo siempre un enfoque de <strong>código limpio</strong>, metodologías ágiles y aprendizaje continuo. Y sí, el
+            toque rocker también va en la actitud: energía, autenticidad y cero miedo a los retos.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Datos rápidos</h3>
+          <small>Lo que te interesa saber en 10 segundos</small>
+          <p>
+            Programadora Front-end en Air Europa (Plexus Tech), creadora de Macoapp, con experiencia en docencia de informática y
+            formación técnica avanzada.
+          </p>
+          <div class="pill-row">
+            <span class="pill pill-strong">Front-end · Angular · Vue</span>
+            <span class="pill">Firebase · PWA</span>
+            <span class="pill">Business Analyst IT</span>
+            <span class="pill">Docente en informática</span>
+            <span class="pill">Java · Spring Boot</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia">
+      <div class="section-title">Experiencia</div>
+      <div class="section-heading">Trayectoria profesional</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Programadora Front-end · Air Europa (Plexus Tech)</h3>
+          <span>Abril 2024 – Actualidad</span>
+          <p>
+            Desarrollo de aplicaciones web, documentación y análisis. HTML, CSS, JS, Typescript, Angular, Vue, Github, Node,
+            Jenkins y microservicios.
+          </p>
+        </div>
+        <div class="timeline-item">
+          <h3>Business Analyst IT · Air Europa (Plexus Tech)</h3>
+          <span>2022 – 2024</span>
+          <p>
+            Análisis y documentación de proyectos, prototipos, informes y gestión de equipo de desarrollo. Jira, Confluence,
+            metodologías Scrum y Agile.
+          </p>
+        </div>
+        <div class="timeline-item">
+          <h3>Diseñadora y desarrolladora gráfica y web · Media Baleares</h3>
+          <span>2021</span>
+          <p>WordPress, PrestaShop, WooCommerce, logotipos, flyers, publicidad y branding.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Docente en Informática · CEPA Sud Escola d’adults</h3>
+          <span>2019 – 2025</span>
+          <p>
+            Formación en informática básica y avanzada, ofimática, TIC y planificación educativa para adultos.
+          </p>
+        </div>
+        <div class="timeline-item">
+          <h3>Programadora Informática · Air Europa (Desoftjim, S.L.)</h3>
+          <span>2018 – 2019</span>
+          <p>
+            Desarrollo de aplicaciones web con Java, Spring Boot, MVC, Maven, Vue, HTML, CSS, Javascript, bases de datos y soporte
+            a usuario.
+          </p>
+        </div>
+        <div class="timeline-item">
+          <h3>Programadora Informática · Cosmo Animación</h3>
+          <span>2016 – 2017</span>
+          <p>
+            Gestión del departamento informático, control de aplicaciones en Python, Django, HTML, CSS y Javascript. Docencia en
+            robótica y programación (Be Steam).
+          </p>
+        </div>
+        <div class="timeline-item">
+          <h3>Tècnica Informàtica · Informàtica Ripoll</h3>
+          <span>2017 – 2018</span>
+          <p>Reparación y configuración de equipos, software y hardware, tablets y móviles.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Docent en Informàtica · CEIP Ca’n Bril</h3>
+          <span>2006 – 2008</span>
+          <p>Formación en informática a niños de infantil y primaria.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Experiencia en Sanitat, Administració i Serveis a la comunitat</h3>
+          <span>1995 – 2016</span>
+          <p>Trayectoria previa en sectores de sanidad, administración y servicios a la comunidad.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos">
+      <div class="section-title">Proyectos</div>
+      <div class="section-heading">Trabajo destacado</div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Macoapp · Plataforma para entrenadores y clientes</h3>
+          <small>Angular 17 · Firebase · PWA · Chart.js</small>
+          <p style="margin-top:0.6rem;">
+            Macoapp centraliza en una sola app la operativa diaria de entrenamiento: gestión de clientes, clases y seguimiento,
+            pagos y facturas, entrenamientos con historial y progreso, configuración y notificaciones.
+          </p>
+          <p style="margin-top:0.6rem;">
+            Desarrollada en Angular 17 con backend serverless en Firebase (Firestore, Auth, Hosting, Functions) y soporte PWA
+            mediante Angular Service Worker.
+          </p>
+          <div class="pill-row">
+            <span class="pill pill-strong">macoapp.es</span>
+            <span class="pill">Entrenadores personales</span>
+            <span class="pill">Clientes · Historial</span>
+            <span class="pill">Dashboard dual</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Otros proyectos y experiencia</h3>
+          <small>Selección basada en tu CV</small>
+          <p style="margin-top:0.6rem;">
+            Desarrollo de aplicaciones corporativas en Air Europa, proyectos Java/Spring Boot, aplicaciones Python/Django y
+            múltiples sitios web con WordPress, PrestaShop y WooCommerce.
+          </p>
+          <p style="margin-top:0.6rem;">
+            Combinación de proyectos técnicos con experiencia docente, lo que refuerza tu capacidad de comunicación y liderazgo
+            técnico.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-title">Skills</div>
+      <div class="section-heading">Stack técnico y herramientas</div>
+      <div class="skills-grid">
+        <div>
+          <h3>Front-end</h3>
+          <div class="skills-list">
+            <span class="highlight">Angular</span>
+            <span class="highlight">VueJs</span>
+            <span>Javascript</span>
+            <span>Typescript</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Bootstrap</span>
+            <span>SCSS</span>
+          </div>
+        </div>
+        <div>
+          <h3>Back-end & serverless</h3>
+          <div class="skills-list">
+            <span>Java</span>
+            <span>Spring Boot</span>
+            <span>Hibernate</span>
+            <span>Thymeleaf</span>
+            <span>PHP</span>
+            <span class="highlight">Firebase (Firestore, Auth, Functions)</span>
+            <span>Node</span>
+          </div>
+        </div>
+        <div>
+          <h3>Dev tools & metodologías</h3>
+          <div class="skills-list">
+            <span>Github</span>
+            <span>Jenkins</span>
+            <span>Jira</span>
+            <span>Confluence</span>
+            <span>Scrum</span>
+            <span>Agile</span>
+            <span>Pega CRM</span>
+          </div>
+        </div>
+        <div>
+          <h3>Diseño & creatividad</h3>
+          <div class="skills-list">
+            <span>WordPress</span>
+            <span>Joomla</span>
+            <span>Prestashop</span>
+            <span>Woocommerce</span>
+            <span>Sketch</span>
+            <span>Figma</span>
+            <span>Adobe XD</span>
+            <span>Photoshop</span>
+            <span>Illustrator</span>
+            <span>Filmora</span>
+          </div>
+        </div>
+        <div>
+          <h3>Otros</h3>
+          <div class="skills-list">
+            <span>Windows</span>
+            <span>Linux</span>
+            <span>Mac</span>
+            <span>Scratch</span>
+            <span>Lego Education</span>
+            <span>Tinkercad</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="section-title">Contacto</div>
+      <div class="section-heading">Hablemos</div>
+      <div class="contact">
+        <div class="contact-main">
+          <p><strong>Teléfono:</strong> 679 969 557</p>
+          <p><strong>Email:</strong> <a href="mailto:marganicol00@gmail.com">marganicol00@gmail.com</a></p>
+          <p><strong>Ubicación:</strong> Campos (Mallorca)</p>
+          <p class="contact-meta">
+            Català: Nadiu (B2) · Español: Nativo · Inglés: Intermedio · Permiso A y B1 · Coche propio · Disponibilidad para viajar.
+          </p>
+        </div>
+        <div class="contact-actions">
+          <button class="btn btn-primary">Enviar email</button>
+          <button class="btn btn-outline">Ver más sobre Macoapp</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Portfolio creado a partir de tu CV completo y Macoapp, con un toque visual moderno y rocker.
+    </footer>
+  </div>
+</body>
+</html>
