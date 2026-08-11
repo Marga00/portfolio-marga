@@ -45,7 +45,6 @@
       padding: 2.5rem 1.5rem 4rem;
     }
 
-    /* Header */
     header {
       display: flex;
       align-items: center;
@@ -127,7 +126,6 @@
       width: 100%;
     }
 
-    /* Hero */
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
@@ -257,202 +255,12 @@
       background: #05060a80;
     }
 
-    /* Sections */
-    section {
-      margin-bottom: 3rem;
-    }
-
-    .section-title {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--muted);
-      margin-bottom: 0.75rem;
-    }
-
-    .section-heading {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-    }
-
-    /* Grid blocks */
-    .grid-2 {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr);
-      gap: 2rem;
-    }
-
-    .card {
-      border-radius: 1.1rem;
-      background: var(--card-bg);
-      border: 1px solid #1f2937;
-      padding: 1.4rem 1.5rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 18px #00000080;
-    }
-
-    .card h3 {
-      font-size: 1rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .card small {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    .card p {
-      font-size: 0.9rem;
-      margin-top: 0.6rem;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.8rem;
-    }
-
-    .pill {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid #374151;
-      color: var(--muted);
-    }
-
-    /* Experience list */
-    .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .timeline-item {
-      padding-left: 1.2rem;
-      border-left: 2px solid #1f2937;
-      position: relative;
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -5px;
-      top: 0.35rem;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 10px var(--accent-soft);
-    }
-
-    .timeline-item h3 {
-      font-size: 0.95rem;
-      margin-bottom: 0.15rem;
-    }
-
-    .timeline-item span {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .timeline-item p {
-      font-size: 0.85rem;
-      margin-top: 0.4rem;
-    }
-
-    /* Skills */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.2rem;
-    }
-
-    .skills-grid h3 {
-      font-size: 0.9rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      font-size: 0.8rem;
-    }
-
-    .skills-list span {
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid #374151;
-      color: var(--muted);
-    }
-
-    /* Contact */
-    .contact {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      align-items: center;
-    }
-
-    .contact-main {
-      font-size: 0.95rem;
-    }
-
-    .contact-main p {
-      margin-bottom: 0.4rem;
-    }
-
-    .contact-meta {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid #1f2937;
-    }
-
-    .contact-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    footer {
-      margin-top: 2.5rem;
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-align: center;
-      padding-top: 2rem;
-      border-top: 1px solid #1f2937;
-    }
-
-    @media (max-width: 840px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav {
-        flex-wrap: wrap;
-      }
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .grid-2 {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
   </style>
 </head>
 
 <body>
   <div class="page">
 
-    <!-- HEADER -->
     <header>
       <div class="logo-mark">
         <div class="logo-icon"></div>
@@ -471,7 +279,6 @@
       </nav>
     </header>
 
-    <!-- HERO -->
     <section class="hero">
       <div class="hero-main">
         <h1><span>Marga</span> Nicolau Oliver</h1>
@@ -509,65 +316,190 @@
         </div>
       </aside>
     </section>
-
-    <!-- SOBRE MI -->
     <section id="sobre-mi">
-      <div class="section-title">Sobre mí</div>
-      <div class="section-heading">Perfil profesional</div>
+  <div class="section-title">Sobre mí</div>
+  <div class="section-heading">Perfil profesional</div>
 
-      <div class="grid-2">
-        <div>
-          <p>
-            Soy desarrolladora web especializada en front‑end con Angular y Vue, con conocimientos de back‑end que me permiten entender y trabajar el ciclo completo de una aplicación. Me gusta crear interfaces modernas, claras y funcionales, siempre con un enfoque práctico y orientado al usuario.
-          </p>
-          <p style="margin-top:0.8rem;">
-            He trabajado en entornos corporativos y en proyectos propios como Macoapp, lo que me aporta una visión completa del desarrollo: desde la definición funcional hasta el despliegue final.
-          </p>
-        </div>
+  <div class="grid-2">
+    <div>
+      <p>
+        Soy desarrolladora web especializada en front‑end con Angular y Vue, con conocimientos de back‑end que me permiten entender y trabajar el ciclo completo de una aplicación. Me gusta crear interfaces modernas, claras y funcionales, siempre con un enfoque práctico y orientado al usuario.
+      </p>
+      <p style="margin-top:0.8rem;">
+        He trabajado en entornos corporativos y en proyectos propios como Macoapp, lo que me aporta una visión completa del desarrollo: desde la definición funcional hasta el despliegue final.
+      </p>
+    </div>
 
-        <div class="card">
-          <h3>Datos rápidos</h3>
-          <small>Información útil</small>
-          <p>
-            Programadora Front-end en Air Europa (Plexus Tech) y creadora de Macoapp.
-          </p>
-          <div class="pill-row">
-            <span class="pill">Front-end · Angular · Vue</span>
-            <span class="pill">Business Analyst IT</span>
-            <span class="pill">Docente en informática</span>
-          </div>
-        </div>
+    <div class="card">
+      <h3>Datos rápidos</h3>
+      <small>Información útil</small>
+      <p>
+        Programadora Front-end en Air Europa (Plexus Tech) y creadora de Macoapp.
+      </p>
+      <div class="pill-row">
+        <span class="pill">Front-end · Angular · Vue</span>
+        <span class="pill">Business Analyst IT</span>
+        <span class="pill">Docente en informática</span>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- EXPERIENCIA -->
-    <section id="experiencia">
-      <div class="section-title">Experiencia</div>
-      <div class="section-heading">Trayectoria profesional</div>
+<section id="experiencia">
+  <div class="section-title">Experiencia</div>
+  <div class="section-heading">Trayectoria profesional</div>
 
-      <div class="timeline">
+  <div class="timeline">
 
-        <div class="timeline-item">
-          <h3>Programadora Front-end · Air Europa (Plexus Tech)</h3>
-          <span>Abril 2024 – Actualidad</span>
-          <p>
-            Desarrollo de aplicaciones web, documentación y análisis. HTML, CSS, JS, Typescript, Angular, Vue, Github, Node, Jenkins y microservicios.
-          </p>
-        </div>
+    <div class="timeline-item">
+      <h3>Programadora Front-end · Air Europa (Plexus Tech)</h3>
+      <span>Abril 2024 – Actualidad</span>
+      <p>
+        Desarrollo de aplicaciones web, documentación y análisis. HTML, CSS, JS, Typescript, Angular, Vue, Github, Node, Jenkins y microservicios.
+      </p>
+    </div>
 
-        <div class="timeline-item">
-          <h3>Business Analyst IT · Air Europa (Plexus Tech)</h3>
-          <span>2022 – 2024</span>
-          <p>
-            Análisis y documentación de proyectos, prototipos, informes y gestión de equipo de desarrollo. Jira, Confluence, Scrum y Agile.
-          </p>
-        </div>
+    <div class="timeline-item">
+      <h3>Business Analyst IT · Air Europa (Plexus Tech)</h3>
+      <span>2022 – 2024</span>
+      <p>
+        Análisis y documentación de proyectos, prototipos, informes y gestión de equipo de desarrollo. Jira, Confluence, Scrum y Agile.
+      </p>
+    </div>
 
-        <div class="timeline-item">
-          <h3>Diseñadora y desarrolladora gráfica y web · Media Baleares</h3>
-          <span>2021</span>
-          <p>WordPress, PrestaShop, WooCommerce, logotipos, flyers, publicidad y branding.</p>
-        </div>
+    <div class="timeline-item">
+      <h3>Diseñadora y desarrolladora gráfica y web · Media Baleares</h3>
+      <span>2021</span>
+      <p>WordPress, PrestaShop, WooCommerce, logotipos, flyers, publicidad y branding.</p>
+    </div>
 
-        <div class="timeline-item">
-          <h3>Docente en Informática · CEPA Sud Escola d
+    <div class="timeline-item">
+      <h3>Docente en Informática · CEPA Sud Escola d’adults</h3>
+      <span>2019 – 2025</span>
+      <p>
+        Formación en informática básica y avanzada, ofimática, TIC y planificación educativa para adultos.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Programadora Informática · Air Europa (Desoftjim, S.L.)</h3>
+      <span>2018 – 2019</span>
+      <p>
+        Desarrollo de aplicaciones web con Java, Spring Boot, MVC y soporte técnico.
+      </p>
+    </div>
+
+  </div>
+</section>
+<section id="proyectos">
+  <div class="section-title">Proyectos</div>
+  <div class="section-heading">Trabajo realizado</div>
+
+  <div class="grid-2">
+
+    <div class="card">
+      <h3>Macoapp · Plataforma para entrenadores</h3>
+      <small>Angular 17 · PWA · Chart.js</small>
+      <p style="margin-top:0.6rem;">
+        Plataforma web y móvil para la gestión de entrenadores personales y sus clientes: clases, pagos, progreso, historial y dashboard dual.
+      </p>
+      <div class="pill-row">
+        <a class="pill" href="https://macoapp.es" target="_blank">Visitar Macoapp</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Terraura · Web corporativa</h3>
+      <small>WordPress · Diseño web</small>
+      <p style="margin-top:0.6rem;">
+        Desarrollo completo de la web corporativa Terraura, con estructura clara, diseño visual y optimización de contenido.
+      </p>
+      <div class="pill-row">
+        <a class="pill" href="https://terraura.es" target="_blank">Visitar Terraura</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>HygeiaVital · Web de salud y bienestar</h3>
+      <small>WordPress · Branding</small>
+      <p style="margin-top:0.6rem;">
+        Creación de la web de HygeiaVital, enfocada en servicios de bienestar y salud, con diseño limpio y navegación intuitiva.
+      </p>
+      <div class="pill-row">
+        <a class="pill" href="https://hygeiavital.com" target="_blank">Visitar HygeiaVital</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-title">Skills</div>
+  <div class="section-heading">Tecnologías y herramientas</div>
+
+  <div class="skills-grid">
+
+    <div>
+      <h3>Front-end</h3>
+      <div class="skills-list">
+        <span>Angular</span>
+        <span>Vue</span>
+        <span>JavaScript</span>
+        <span>TypeScript</span>
+        <span>HTML</span>
+        <span>CSS / SCSS</span>
+      </div>
+    </div>
+
+    <div>
+      <h3>Back-end</h3>
+      <div class="skills-list">
+        <span>Node.js</span>
+        <span>APIs REST</span>
+        <span>Java</span>
+        <span>Spring Boot</span>
+      </div>
+    </div>
+
+    <div>
+      <h3>Herramientas</h3>
+      <div class="skills-list">
+        <span>Git / GitHub</span>
+        <span>Jira</span>
+        <span>Confluence</span>
+        <span>Figma</span>
+        <span>Jenkins</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section id="contacto">
+  <div class="section-title">Contacto</div>
+  <div class="section-heading">Hablemos</div>
+
+  <div class="contact">
+    <div class="contact-main">
+      <p>Si quieres contactar conmigo para proyectos, colaboraciones o información:</p>
+      <p><strong>Email:</strong> marganicol00@gmail.com</p>
+    </div>
+
+    <div class="contact-actions">
+      <a class="btn btn-primary" href="mailto:marganicol00@gmail.com">Enviar email</a>
+    </div>
+  </div>
+
+  <div class="contact-meta">
+    Disponible para proyectos web, front-end y aplicaciones Angular/Vue.
+  </div>
+</section>
+
+<footer>
+  © 2026 · Marga Nicolau · Portfolio profesional
+</footer>
+
+</div> <!-- cierre .page -->
+
+</body>
+</html>
+
